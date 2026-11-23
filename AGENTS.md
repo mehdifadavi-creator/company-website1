@@ -1,0 +1,61 @@
+# Working in this repo
+
+This is a teaching template for people who have never used GitHub, one step past `first-website`:
+a real company landing page for a small or local business, ending on the reader's own domain
+instead of `github.io`. Someone clicks "Use this template", edits one file in the browser, and gets
+a live site with a working contact form. Keep it that way.
+
+## The constraints that define this repo
+
+- **No build step, no package manager, no terminal.** Everything must work when the reader edits
+  files through GitHub's web editor and GitHub Pages serves the repo root as-is. Do not add
+  `package.json`, a bundler, a framework, or a Pages build workflow.
+- **One page.** `index.html` is the whole site. If a change needs a second file to make sense, it
+  probably belongs in a different template. The one deliberate exception is `CNAME`, which the
+  reader adds themselves in step 5: that's how GitHub Pages custom domains work, not a design choice
+  to revisit.
+- **Looks like a company page, not a personal bio.** This is the thing that distinguishes it from
+  `first-website`. A sticky nav, a full-width hero band, and alternating full-width sections
+  (services, process, pricing, testimonial, then a "meet the owner" band) rather than one narrow
+  scrolled column. Keep that structure when editing: a redesign that collapses back into a single
+  centered column re-creates `first-website` and defeats the point of having two templates.
+- **More sections than `first-website`, on purpose.** A landing page for a real business needs
+  services, a process, pricing, and social proof, not just a bio and a form. Keep each section
+  short enough that a beginner can find and replace the whole thing in one read.
+- **Tailwind via the browser CDN**, loaded from `@tailwindcss/browser@4`. This is the one place in
+  the org where the CDN build is correct, because the reader has no way to run a build. Style with
+  utility classes, and put the theme in the `@theme` block so a beginner changes three colours in
+  one place rather than hunting through markup.
+- **Comments in `index.html` are the lesson**, not clutter. Keep `CHANGE ME` markers where the
+  reader is meant to edit, and keep them rare enough to still mean something.
+
+## The form
+
+The `action` ships as the literal placeholder `https://f.bootform.com/__YOUR_FORM_ID__`.
+
+**In this template repo (`github.com/BootForm/one-page-site`), it stays the placeholder.** A form ID is the
+entire claim credential: whoever claims one first owns it permanently, and every copy of the
+template would then deliver its visitors' messages to that person.
+
+**In a copy of the template (someone's own site), the opposite applies.** Putting the owner's own
+form ID in the `action` is step 4 of the README, and it is how their form starts working. If
+the `action` already holds a real ID, it is theirs: keep it, and never change it back to the
+placeholder. Only ever use an ID the owner generated (never one from a doc, a tutorial or another
+site). To tell which case you are in, run `git remote get-url origin`: only the template itself
+points at `BootForm/one-page-site`.
+
+The honeypot input must stay. It is hidden, unlabelled to screen readers, and filtering depends on
+it being submitted empty.
+
+## Writing style
+
+- Second person, present tense, short sentences. The reader is nervous and has not done this before.
+- Say what will happen before asking them to click something, and say what they should see after.
+- **No em dashes or en dashes.** Use a comma, a colon, a full stop, or brackets.
+- No AI attribution in commits or pull requests, here or anywhere else in this organisation.
+- Never claim BootForm offers EU data residency, a DPA, or an uptime SLA. It does not.
+
+## Before changing anything
+
+Read it as someone who has never made a website. If a step assumes knowledge the previous steps did
+not give, that is a bug, and it is the most important kind of bug in this repo.
